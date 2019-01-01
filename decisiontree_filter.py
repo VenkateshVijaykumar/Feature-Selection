@@ -8,7 +8,7 @@
    Requires Numpy and sklearn to run.
 """
 """To run:
-   import the filter_method from this dt_filter.py file into your own file.
+   import the dt_filter_method from this decisiontree_filter.py file into your own file.
    pass the features and classes in array formats [n_samples,n_features] for feature array and
    [n_samples] or [n_samples,n_outputs] for class array.
    You can vary the percent_reduction parameter to reflect the percentage of original features
