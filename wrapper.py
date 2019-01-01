@@ -1,9 +1,10 @@
 """Authored by: Venkatesh Vijaykumar github: @VenkateshVijaykumar
-   This implements Extra Trees as a Feature Selection Method.
-   The tree method used is the ensemble Extra Trees method from sklearn.
-   The et_filter_method acts as a feature 'filter' which performs feature selection based
-   on the importance of the feature in the splits of the trees in the forest.
-   The 'filter' has no interaction with the learner that uses the reduced feature set.
+   This implements Wrapping as a Feature Selection Method.
+   The wrapper essentially evaluates combinations of features and returns the set that
+   provides best accuracy for the learner used. The learner in this case is the
+   MLPClassifier from sklearn.
+   The 'wrapper' interacts with the learner that uses the reduced feature set in order to find a subset
+   that results in the best accuracy.
    The dataset used here in the main section is the Iris dataset also from sklearn.
    Requires Numpy and sklearn to run.
 """
@@ -23,7 +24,7 @@ from sklearn.datasets import load_iris
 from matplotlib import pyplot as plt
 from itertools import combinations
 
-def et_filter_method(features,classes,estimator,percent_reduction=0.5,n_est=10):
+def wrapper_method(features,classes,estimator,percent_reduction=0.5,n_est=10):
     idx_lst = []
     combs = []
     acc_lst = []
