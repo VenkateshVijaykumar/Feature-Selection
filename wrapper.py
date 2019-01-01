@@ -9,12 +9,12 @@
    Requires Numpy and sklearn to run.
 """
 """To run:
-   import the filter_method from this dt_filter.py file into your own file.
+   import the wrapper_method from this wrapper.py file into your own file.
    pass the features and classes in array formats [n_samples,n_features] for feature array and
    [n_samples] or [n_samples,n_outputs] for class array.
    You can vary the percent_reduction parameter to reflect the percentage of original features
    to be retained. The retained percentage will include the most important n% of the original
-   You can vary the number of weak learners in the ensemble with the n_est parameter
+   Can set the estimator to be any sklearn learner implementing the fit() and predict() methods
 """
 
 import numpy as np
