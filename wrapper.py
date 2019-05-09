@@ -49,5 +49,5 @@ if __name__ == '__main__':
     train_class = iris.target
     estimator = MLPClassifier(hidden_layer_sizes=100, max_iter=600, alpha=0.1, learning_rate='constant',
                     solver='adam', verbose=0, tol=1e-4, random_state=1, learning_rate_init=.05)
-    best_combo, accuracies = et_filter_method(train_feat,train_class,estimator)
+    best_combo, accuracies = wrapper_method(train_feat,train_class,estimator)
     print accuracies
