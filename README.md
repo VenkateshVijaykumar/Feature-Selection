@@ -1,8 +1,25 @@
 # Feature-Selection
-Code for basic feature selection algorithms, inspired by the content from CS7641 at Georgia Tech
 
-This implements Decision Trees, Random Forests, and Extra Trees as Feature Selection Methods. The methods act as  feature 'filters' which perform feature selection based on the importance of the feature in course of the particular algorithm. The 'filter' has no interaction with the learner that uses the reduced feature set.
-This also implements Wrapping as a Feature Selection Method. The wrapper essentially evaluates combinations of features and returns the set that provides best accuracy for the learner used. The learner in this case is the MLPClassifier from sklearn. The 'wrapper' interacts with the learner that uses the reduced feature set in order to find a subset that results in the best accuracy
+This repository contains Python programs for feature selection routines for ML algorithms, based on ML algorithms. Unlike feature transformation, these routines retain the most important *N percent* of the original feature set.
+The selection routines were inspired by the excellent content in the CS-7641 class at Georgia Tech.
 
-The dataset used here in the main section is the Iris dataset also from sklearn.
-Requires Numpy and sklearn to run.
+
+# Files
+
+The files in this repo are:
+
+ - decisiontree_filter.py:
+ - extratrees_filter.py
+ - randomforest_filter.py
+ - wrapper.py
+
+The decisiontree_filter, extratrees_filter and randomforest_filter utilize the Gini index to determine the importance of the feature. The filter methods then return the new truncated feature set that retain the user specified *N percent* most important features.
+
+The wrapper routine considers all possible combinations of features, and calculates the accuracy of the estimator for each of these. It returns the combination with the best accuracy, and also a list of combinations with their associated accuracy values.
+
+# Requirements
+
+Packages required for the programs in this repository to run are:
+
+ - NumPy
+ - Scikit-Learn
